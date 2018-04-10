@@ -9,5 +9,6 @@ namespace Lab_4___Pedro_Naretto_19689484_5
     public interface ICliente
     {
         string TipoLicencia();
+        string TipoCliente();
     }
 }

@@ -12,6 +12,10 @@ namespace Lab_4___Pedro_Naretto_19689484_5
         public string nombreRepresentante;
         public string tipoPermiso;
 
+        public string TipoCliente()
+        {
+            return "Empresa";
+        }
 
         public string TipoLicencia()
         {

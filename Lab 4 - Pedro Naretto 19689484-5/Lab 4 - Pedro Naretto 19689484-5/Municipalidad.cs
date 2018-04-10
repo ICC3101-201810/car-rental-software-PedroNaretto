@@ -22,7 +22,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
             Random rnd = new Random();
             if (licencia == "maquinaria pesada")
             {
-                if ( cliente == Empresa)
+                if ( cliente.TipoCliente == "Empresa")
                 {
                     int x = rnd.Next(0, 100);
                     if (x <= 63)
