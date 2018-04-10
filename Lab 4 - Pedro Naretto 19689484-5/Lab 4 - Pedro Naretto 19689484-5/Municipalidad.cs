@@ -48,7 +48,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
             }
             if (licencia == "buses")
             {
-                if (cliente == Empresa)
+                if (cliente.TipoCliente == "Empresa")
                 {
                     int x = rnd.Next(0, 100);
                     if (x <= 80)
@@ -61,7 +61,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                         return "";
                     }
                 }
-                if (cliente == Organizacion)
+                if (cliente.TipoCliente == "Organizacion")
                 {
                     int x = rnd.Next(0, 100);
                     if (x <= 35)
@@ -74,7 +74,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                         return "";
                     }
                 }
-                if (cliente == Institucion)
+                if (cliente.TipoCliente == "Institucion")
                 {
                     int x = rnd.Next(0, 100);
                     if (x <= 58)

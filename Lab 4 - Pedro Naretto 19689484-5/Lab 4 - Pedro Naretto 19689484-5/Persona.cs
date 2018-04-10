@@ -19,7 +19,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
             this.Licencia = licencia;
         }
 
-        public TipoCliente()
+        public string TipoCliente()
         {
             return "Persona";
         }
