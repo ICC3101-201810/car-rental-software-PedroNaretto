@@ -42,11 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
-    <Compile Include="Class3.cs" />
+    <Compile Include="Institucion.cs" />
+    <Compile Include="Municipalidad.cs" />
+    <Compile Include="Organizacion.cs" />
+    <Compile Include="Vehiculos.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Sucursal.cs" />
     <Compile Include="Cliente.cs" />
-    <Compile Include="empresa.cs" />
+    <Compile Include="Empresa.cs" />
     <Compile Include="Interaccion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -8,8 +8,8 @@ namespace Lab_4___Pedro_Naretto_19689484_5
 {
     class Sucursal
     {
-        List<Vehiculos> listaVehiculos;
-        string ubicacion;
+        public List<Vehiculos> listaVehiculos;
+        public string ubicacion;
 
         public Sucursal(List<Vehiculos> listaVehiculos, string ubicacion)
         {

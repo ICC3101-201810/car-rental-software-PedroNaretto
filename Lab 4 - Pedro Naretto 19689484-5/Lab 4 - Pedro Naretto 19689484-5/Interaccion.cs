@@ -8,42 +8,46 @@ namespace Lab_4___Pedro_Naretto_19689484_5
 {
     class Interaccion
     {
-        Cliente cliente;
+        ICliente cliente;
         Sucursal sucursal;
 
-        public Interaccion(Cliente cliente, Sucursal sucursal)
+        public Interaccion(ICliente cliente, Sucursal sucursal)
         {
             this.cliente = cliente;
             this.sucursal = sucursal;
         }
 
-        public List<Vehiculos> CualVehiculo(List<Vehiculos> listaVehiculos, Cliente cliente)
+        public List<Vehiculos> CualVehiculo(List<Vehiculos> listaVehiculos, ICliente cliente)
         {
             Console.Write("Estos vehiculos tenemos para ofrecerle");
             List<Vehiculos> listaOpcionCliente = new List<Vehiculos> { };
             int i = 1;
             foreach (Vehiculos vehiculo in listaVehiculos)
             {
-                if (vehiculo.TipoLicencia == Cliente.tipoLicencia())
+                if (vehiculo.TipoLicencia == ICliente.TipoLicencia())
                 {
-                    Console.Write($"{i}.-"vehiculo);
+                    Console.Write($"{i}.-  {vehiculo.modelo}");
                     listaOpcionCliente.Add(vehiculo);
                     i += 1;
                 }
             }
             List<Vehiculos> listaCliente = new List<Vehiculos> { };
-            while (x)
+            int x = 0;
+            while (true)
             {
                 Console.WriteLine("Escoja el numero de auto que decea (si no decea ninguno oprima 0): ");
-                int indice = Console.ReadLine();
-                if (indice == 0)
+                string indice = Console.ReadLine();
+                if (indice == "0")
                 {
                     break;
                 }
                 else
                 {
-                    listaCliente.Add(listaOpcionCliente[indice]);
+                    listaCliente.Add(listaOpcionCliente[x]);
+                    x += 1;
                 }
             }
+            return listaCliente;
         }
+    }
 }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Lab_4___Pedro_Naretto_19689484_5
 {
-    class empresa:Cliente
+    class Empresa:ICliente
     {
         public string nombreEmpresa;
         public string nombreRepresentante;
         public string tipoPermiso;
 
 
-        public string tipoLicencia()
+        public string TipoLicencia()
         {
             return tipoPermiso;
         }

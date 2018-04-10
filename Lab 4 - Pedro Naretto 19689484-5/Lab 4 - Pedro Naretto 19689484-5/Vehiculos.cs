@@ -14,15 +14,17 @@ namespace Lab_4___Pedro_Naretto_19689484_5
         public string año;
         public string TipoLicencia;
         public int precio;
+        public string patente;
 
-        public Vehiculos(string tipo, string marca, string modelo, string año, string TipoLicencia, int precio)
+        public Vehiculos(string tipo, string marca, string modelo, string año, string tipoLicencia, int precio, string patente)
         {
             this.tipo = tipo;
             this.marca = marca;
             this.modelo = modelo;
             this.año = año;
-            this.TipoLicencia = TipoLicencia;
+            TipoLicencia = tipoLicencia;
             this.precio = precio;
+            this.patente = patente;
         }
     }
 }

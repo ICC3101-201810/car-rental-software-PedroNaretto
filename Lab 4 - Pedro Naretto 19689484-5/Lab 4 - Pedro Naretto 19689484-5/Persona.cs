@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lab_4___Pedro_Naretto_19689484_5
 {
-    class Persona:Cliente
+    class Persona:ICliente
     {
-        string nombre;
-        int edad;
-        string Licencia;
+        public string nombre;
+        public int edad;
+        public string Licencia;
 
         public Persona(string nombre, int edad, string licencia)
         {
@@ -19,7 +19,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
             this.Licencia = licencia;
         }
 
-        public string tipoLicencia()
+        public string TipoLicencia()
         {
             return Licencia;
         }
