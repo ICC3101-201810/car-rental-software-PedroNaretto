@@ -41,7 +41,32 @@ namespace Lab_4___Pedro_Naretto_19689484_5
             string Patente = Console.ReadLine();
             Console.WriteLine("Stock: ");
             int.TryParse(Console.ReadLine(), out Stock);
-            ListaVehiculos.Add(new Autos(Marca, Modelo, Año, Precio, Patente, Stock, new List<Accesorios> { }));
+            List<Accesorios> acce = new List<Accesorios> { };
+            Console.WriteLine("Tiene DVD incluido? \n1)Si \n2)No");
+            string respuesta = Console.ReadLine();
+            if (respuesta == "1")
+            {
+                acce.Add(new DVD());
+            }
+            Console.WriteLine("Tiene Corrida de asientos extra? \n1)Si \n2)No");
+            respuesta = Console.ReadLine();
+            if (respuesta == "1")
+            {
+                acce.Add(new AsientosExtras());
+            }
+            Console.WriteLine("Tiene Maletero grande? \n1)Si \n2)No");
+            respuesta = Console.ReadLine();
+            if (respuesta == "1")
+            {
+                acce.Add(new MaleteroGrande());
+            }
+            Console.WriteLine("Es electrico? \n1)Si \n2)No");
+            respuesta = Console.ReadLine();
+            if (respuesta == "1")
+            {
+                acce.Add(new Electrico());
+            }
+            ListaVehiculos.Add(new Autos(Marca, Modelo, Año, Precio, Patente, Stock, acce));
 
             return ListaVehiculos;
         }
@@ -154,6 +179,43 @@ namespace Lab_4___Pedro_Naretto_19689484_5
             ListaVehiculos.Add(new MaquinariaPesada(Marca, Modelo, Año, Precio, Patente, Stock, new List<Accesorios> { }));
 
             return ListaVehiculos;
+        }
+        public void RecibirVehiculoRentado( Cliente cliente)
+        {
+            Console.WriteLine("Entro al metodo");
+            foreach (Arriendo arriendo in Gestion)
+            {
+                if (cliente == arriendo.cliente)
+                {
+                        Console.WriteLine("seguimos en el metodo");
+                        int respuesta;
+                        Console.WriteLine("Que vehiculo desea devolcer: ");
+                        int x = 1;
+                        foreach (Vehiculos vehiculo in arriendo.vehiculos)
+                        {
+                            Console.WriteLine($"{x}){vehiculo.Marca}, {vehiculo.Modelo}");
+                        }
+                        int.TryParse(Console.ReadLine(), out respuesta);
+                        while (respuesta < 1 & respuesta > arriendo.vehiculos.Count())
+                        {
+                            Console.Beep();
+                            Console.WriteLine("Comando invalido");
+                            Console.WriteLine("Que vehiculo desea devolcer: ");
+                            int c = 1;
+                            foreach (Vehiculos vehiculo in arriendo.vehiculos)
+                            {
+                                Console.WriteLine($"{c}){vehiculo.Marca}, {vehiculo.Modelo}");
+                            }
+                            int.TryParse(Console.ReadLine(), out respuesta);
+                        }
+
+                        ListaVehiculos[ListaVehiculos.IndexOf(arriendo.vehiculos[respuesta - 1])].Stock += arriendo.vehiculos[respuesta - 1].Stock;
+                        Gestion.Remove(arriendo);
+                        Console.WriteLine("Gracias por devolve nustro vehiculo y gracias por preferirnos");
+
+                    
+                }
+            }
         }
     }
 }

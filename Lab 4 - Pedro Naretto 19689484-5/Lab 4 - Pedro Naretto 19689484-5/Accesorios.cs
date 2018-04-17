@@ -14,6 +14,49 @@ namespace Lab_4___Pedro_Naretto_19689484_5
         }
     }
 
+    class Electrico : Accesorios
+    {
+        public int Precio = 9000;
+
+
+        public override string Accesorio()
+        {
+            return "Electrico";
+        }
+    }
+    class MaleteroGrande : Accesorios
+    {
+        public int Precio = 9000;
+
+
+        public override string Accesorio()
+        {
+            return "Maletero grande";
+        }
+    }
+
+    class AsientosExtras : Accesorios
+    {
+        public int Precio = 9000;
+
+
+        public override string Accesorio()
+        {
+            return "Corrida de asientos extra";
+        }
+    }
+
+    class DVD : Accesorios
+    {
+        public int Precio = 9000;
+
+
+        public override string Accesorio()
+        {
+            return "DVD";
+        }
+    }
+
     class Bluetooth:Accesorios
     {
         public int Precio = 9000;

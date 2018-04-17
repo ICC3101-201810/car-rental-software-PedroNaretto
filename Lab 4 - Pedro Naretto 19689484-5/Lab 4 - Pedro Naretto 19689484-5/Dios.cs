@@ -112,7 +112,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
             return Sucursal;
         }
 
-        public Cliente CrearCliente()
+        public Cliente CrearCliente(string Nombre)
         {
             Console.WriteLine("Llego cliente:");
             while (true)
@@ -127,8 +127,6 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                     TipoCliente = Console.ReadLine();
                 }
 
-                Console.WriteLine("Nombre Cliente: ");
-                string Nombre = Console.ReadLine();
                 if (TipoCliente == "1")
                 {
                     Persona x =  new Persona(Nombre, new List<string> { }, new List<Vehiculos> { });

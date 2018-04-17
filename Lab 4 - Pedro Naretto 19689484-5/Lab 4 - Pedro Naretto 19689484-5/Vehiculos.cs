@@ -75,6 +75,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
     class Autos : Vehiculos
     {
         string TipoLicencia = "Licencia para autos";
+        
 
         public Autos(string marca, string modelo, int año, int precio, string patente, int stock, List<Accesorios> Accesorios) : base(marca, modelo, año, precio, patente, stock, Accesorios)
         {

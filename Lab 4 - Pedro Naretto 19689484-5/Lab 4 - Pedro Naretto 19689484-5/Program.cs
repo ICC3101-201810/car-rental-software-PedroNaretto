@@ -29,11 +29,45 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                 }
                 if (respuesta == "1")
                 {
-                    Cliente cliente = Dios.CrearCliente();
+                    Console.WriteLine($"Bien venido a {Sucursal1.Nombre}");
+                    Console.WriteLine("Cual es su nombre");
+                    Console.WriteLine("Le ofrecemos autos con:\n0)Nada \n1)DVD inluido? \n2)Maleteros grandes? \n3)Asientos extras \n4)Que sea electrico");
+                    string nombre = Console.ReadLine();
+                    Cliente cliente;
+                    bool existe = true;
+                        if (existe)
+                        {
+                            foreach( Arriendo arriendo in Sucursal1.Gestion)
+                            {
+                                if (nombre == arriendo.cliente.Nombre)
+                                {
+                                    cliente = arriendo.cliente;
+                                    break;
+                                }
+                                existe = false;
+                            }
+                            if (existe)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                cliente = Dios.CrearCliente(nombre);
+                            }
+                        }
 
-                    Interaccion interaccion1 = new Interaccion(cliente, Sucursal1);
+                    Console.WriteLine("Que decea hacer: \n1)Devolver vehiculo \n2)Arrendar vehiculo");
+                    string accion = Console.ReadLine();
+                    if (accion == "1")
+                    {
+                        Sucursal1.RecibirVehiculoRentado(cliente);
+                    }
+                    else if (accion == "2")
+                    {
+                        Interaccion interaccion1 = new Interaccion(cliente, Sucursal1);
 
-                    cliente.Compra = interaccion1.ArrendaAutos();
+                        cliente.Compra = interaccion1.ArrendaAutos();
+                    }
                 }
                 else if (respuesta == "2")
                 {

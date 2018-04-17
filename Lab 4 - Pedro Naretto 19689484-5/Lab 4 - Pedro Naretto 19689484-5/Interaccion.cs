@@ -23,6 +23,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
 
                     if (Cliente.TipoLicencia.Contains("Licencia para autos"))
                     {
+                    
                     foreach (Vehiculos v in Sucursal.ListaVehiculos)
                         if (v is Autos && v.Stock > 0)
                         {
@@ -72,7 +73,10 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                 }
                 if (Sucursal.ListaVehiculos.Count() == 0 & OpcionesParaCliente.Count() == 0)
                 {
+                    Console.Beep();
                     Console.WriteLine("No tenemos vehiculos para ofrecerle");
+                    Console.Beep();
+                    
                     return OpcionesParaCliente;
                 }
                 else
@@ -85,8 +89,15 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                         Console.WriteLine("Escoja el numero del auto que desea comprar: ");
                         Console.WriteLine("0) Ninguno");
                         foreach (Vehiculos vehiculo in OpcionesParaCliente)
-                        {
+                        {   
+                            if (vehiculo.Accesorios.Count() == 0)
+                            { 
                             Console.WriteLine($"{x}){vehiculo.TipoVehiculo()}, {vehiculo.Marca}, {vehiculo.Modelo}");
+                            }
+                            else
+                            {
+                            Console.WriteLine($"{x}){vehiculo.TipoVehiculo()}, {vehiculo.Marca}, {vehiculo.Modelo}, viene con DVD integrado");
+                            }
                             x++;
                         }
                         int resultado;
@@ -95,6 +106,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
 
                         while (resultado < 0 & resultado >= OpcionesParaCliente.Count())
                         {
+                            Console.Beep();
                             Console.WriteLine("Comando inválido");
                             Console.WriteLine("Escoja un vehiculo");
                             int.TryParse(Console.ReadLine(), out resultado);
@@ -106,6 +118,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                         int.TryParse(Console.ReadLine(), out cantidad);
                         while (cantidad > OpcionesParaCliente[resultado - 1].Stock)
                         {
+                            Console.Beep();
                             Console.WriteLine("No hay tal cantidad de vahiculos disponibles");
                             Console.Write($"Cuantos decea arrendar? Tiene un maximo de {OpcionesParaCliente[resultado - 1].Stock}: ");
                             int.TryParse(Console.ReadLine(), out cantidad);
@@ -138,6 +151,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                         string respuesta = Console.ReadLine();
                         while (respuesta != "1" & respuesta != "2")
                         {
+                            Console.Beep();
                             Console.WriteLine("Comando Invalido");
                             Console.WriteLine("Decea Agregarle algun accesorio: \n1)Si \n2)No");
                             respuesta = Console.ReadLine();
@@ -158,17 +172,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
 
                     }
 
-                    foreach(Vehiculos vehiculo in Sucursal.ListaVehiculos)
-                    {
-                    Console.WriteLine($"{vehiculo.Marca}--{vehiculo.Modelo}--{vehiculo.Stock}");
-
-                    }
-                    foreach (Vehiculos vehiculo in ListaArriendoCliente)
-                    {
-                        Console.WriteLine($"{vehiculo.Marca}--{vehiculo.Modelo}--{vehiculo.Stock}");
-
-                    }
-
+                Console.Beep();
                 return ListaArriendoCliente;
 
                 }
