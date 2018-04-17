@@ -25,9 +25,9 @@ namespace Lab_4___Pedro_Naretto_19689484_5
             while (true)
             {
                 int resultado;
-                Console.WriteLine($"Decea agregar algun vehiculo a su sucursal {Sucursal.Nombre}? \n 0)Nada \n 1)Auto \n 2)Bus \n 3)Camion");
+                Console.WriteLine($"Decea agregar algun vehiculo a su sucursal {Sucursal.Nombre}? \n 0)Nada \n 1)Auto \n 2)Bus \n 3)Camion \n 4)Moto \n 5)Acuatico  \n 6)Maquinaria Pesada");
                 string resultadoS = Console.ReadLine();
-                while (resultadoS != "1" & resultadoS != "2" & resultadoS != "3" & resultadoS != "0")
+                while (resultadoS != "1" & resultadoS != "2" & resultadoS != "3" & resultadoS != "4" & resultadoS != "5" & resultadoS != "6" & resultadoS != "0")
                 {
                     Console.WriteLine("Comando inválido");
                     Console.WriteLine($"Decea agregar algun vehiculo a su sucursal {Sucursal.Nombre} \n 0)Nada \n 1)Auto \n 2)Bus \n 3)Camion");
@@ -37,12 +37,6 @@ namespace Lab_4___Pedro_Naretto_19689484_5
 
                 int.TryParse(resultadoS, out resultado);
 
-                while (resultado != 1 & resultado != 2 & resultado != 3 & resultado != 0)
-                {
-                    Console.WriteLine("Comando inválido");
-                    Console.WriteLine($"Decea agregar algun vehiculo a su sucursal {Sucursal.Nombre} \n 0)Nada \n 1)Auto \n 2)Bus \n 3)Camion");
-                    int.TryParse(Console.ReadLine(), out resultado);
-                }
                 if (resultado == 1)
                 {
                     Sucursal.AgregarAuto(Sucursal.ListaVehiculos);
@@ -57,6 +51,21 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                 else if (resultado == 3)
                 {
                     Sucursal.AgregarCamion(Sucursal.ListaVehiculos);
+                    continue;
+                }
+                else if (resultado == 4)
+                {
+                    Sucursal.AgregarMoto(Sucursal.ListaVehiculos);
+                    continue;
+                }
+                else if (resultado == 5)
+                {
+                    Sucursal.AgregarAcuatico(Sucursal.ListaVehiculos);
+                    continue;
+                }
+                else if (resultado == 6)
+                {
+                    Sucursal.AgregarMaquinariaPesada(Sucursal.ListaVehiculos);
                     continue;
                 }
                 else if (resultado == 0)
@@ -126,6 +135,10 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                     Municipalidad.DarLicencia(x, "Licencia para autos");
                     Municipalidad.DarLicencia(x, "Licencia para buses");
                     Municipalidad.DarLicencia(x, "Licencia para camiones");
+                    Municipalidad.DarLicencia(x, "Licencia para motos");
+                    Municipalidad.DarLicencia(x, "Licencia para acuaticos");
+                    Municipalidad.DarLicencia(x, "Licencia para maquinaria pesada");
+
                     return x;
                 }
                 else if (TipoCliente == "2")
@@ -134,6 +147,9 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                     Municipalidad.DarLicencia(x, "Licencia para autos");
                     Municipalidad.DarLicencia(x, "Licencia para buses");
                     Municipalidad.DarLicencia(x, "Licencia para camiones");
+                    Municipalidad.DarLicencia(x, "Licencia para motos");
+                    Municipalidad.DarLicencia(x, "Licencia para acuaticos");
+                    Municipalidad.DarLicencia(x, "Licencia para maquinaria pesada");
                     return x;
                 }
                 else if (TipoCliente == "3")
@@ -142,6 +158,9 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                     Municipalidad.DarLicencia(x, "Licencia para autos");
                     Municipalidad.DarLicencia(x, "Licencia para buses");
                     Municipalidad.DarLicencia(x, "Licencia para camiones");
+                    Municipalidad.DarLicencia(x, "Licencia para motos");
+                    Municipalidad.DarLicencia(x, "Licencia para acuaticos");
+                    Municipalidad.DarLicencia(x, "Licencia para maquinaria pesada");
                     return x;
                 }
                 else if (TipoCliente == "4")
@@ -150,6 +169,9 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                     Municipalidad.DarLicencia(x, "Licencia para autos");
                     Municipalidad.DarLicencia(x, "Licencia para buses");
                     Municipalidad.DarLicencia(x, "Licencia para camiones");
+                    Municipalidad.DarLicencia(x, "Licencia para motos");
+                    Municipalidad.DarLicencia(x, "Licencia para acuaticos");
+                    Municipalidad.DarLicencia(x, "Licencia para maquinaria pesada");
                     return x;
                 }
             }

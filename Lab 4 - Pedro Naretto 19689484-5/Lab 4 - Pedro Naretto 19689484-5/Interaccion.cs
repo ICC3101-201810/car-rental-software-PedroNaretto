@@ -45,6 +45,30 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                             OpcionesParaCliente.Add(v);
                         }
                     }
+                    if (Cliente.TipoLicencia.Contains("Licencia para motos"))
+                    {
+                    foreach (Vehiculos v in Sucursal.ListaVehiculos)
+                        if (v is Motos && v.Stock > 0)
+                        {
+                            OpcionesParaCliente.Add(v);
+                        }
+                    }
+                    if (Cliente.TipoLicencia.Contains("Licencia para acuaticos"))
+                    {
+                    foreach (Vehiculos v in Sucursal.ListaVehiculos)
+                        if (v is Acuaticos && v.Stock > 0)
+                        {
+                            OpcionesParaCliente.Add(v);
+                        }
+                    }
+                    if (Cliente.TipoLicencia.Contains("Licencia para maquinaria pesada"))
+                    {
+                    foreach (Vehiculos v in Sucursal.ListaVehiculos)
+                        if (v is MaquinariaPesada && v.Stock > 0)
+                        {
+                            OpcionesParaCliente.Add(v);
+                        }
+                    }
                 }
                 if (Sucursal.ListaVehiculos.Count() == 0 & OpcionesParaCliente.Count() == 0)
                 {
@@ -58,11 +82,11 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                     while (true)
                     {
                         int x = 1;
-                        Console.WriteLine("Escoja el numero del auto que decea comprar: ");
+                        Console.WriteLine("Escoja el numero del auto que desea comprar: ");
                         Console.WriteLine("0) Ninguno");
                         foreach (Vehiculos vehiculo in OpcionesParaCliente)
                         {
-                            Console.WriteLine($"{x}){vehiculo.Marca}, {vehiculo.Modelo}");
+                            Console.WriteLine($"{x}){vehiculo.TipoVehiculo()}, {vehiculo.Marca}, {vehiculo.Modelo}");
                             x++;
                         }
                         int resultado;
@@ -93,7 +117,7 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                         }
                         if (OpcionesParaCliente[resultado - 1] is Buses)
                         {
-                           Buses V = new Buses(OpcionesParaCliente[resultado - 1].Marca, OpcionesParaCliente[resultado - 1].Modelo, OpcionesParaCliente[resultado - 1].Año, OpcionesParaCliente[resultado - 1].Precio, OpcionesParaCliente[resultado - 1].Patente, cantidad, new List<Accesorios> { });
+                            Buses V = new Buses(OpcionesParaCliente[resultado - 1].Marca, OpcionesParaCliente[resultado - 1].Modelo, OpcionesParaCliente[resultado - 1].Año, OpcionesParaCliente[resultado - 1].Precio, OpcionesParaCliente[resultado - 1].Patente, cantidad, new List<Accesorios> { });
                             ListaArriendoCliente.Add(V);
                         }
                         if (OpcionesParaCliente[resultado - 1] is Camion)

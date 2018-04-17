@@ -83,6 +83,21 @@ namespace Lab_4___Pedro_Naretto_19689484_5
                 Console.WriteLine("Se le ha otorgado la licencia para autos");
                 cliente.TipoLicencia.Add("Licencia para autos");
             }
+            else if (licencia == "Licencia para motos")
+            {
+                Console.WriteLine("Se le ha otorgado la licencia para motos");
+                cliente.TipoLicencia.Add("Licencia para motos");
+            }
+            else if (licencia == "Licencia para acuaticos")
+            {
+                Console.WriteLine("Se le ha otorgado la licencia para acuaticos");
+                cliente.TipoLicencia.Add("Licencia para acuaticos");
+            }
+            else if (licencia == "Licencia para maquinaria pesada" && cliente is Empresa)
+            {
+                Console.WriteLine("Se le ha otorgado la licencia para maquinaria pesada");
+                cliente.TipoLicencia.Add("Licencia para maquinaria pesada");
+            }
             else
             {
                 Console.WriteLine("No se dio el permiso");

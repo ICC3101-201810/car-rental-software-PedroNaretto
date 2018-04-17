@@ -26,6 +26,10 @@ namespace Lab_4___Pedro_Naretto_19689484_5
             Stock = stock;
             Accesorios = accesorios;
         }
+        public virtual string TipoVehiculo()
+        {
+            return  "";
+        }
 
         public List<Accesorios> AgregarAccesorio(List<Accesorios> accesorios)
         {
@@ -76,6 +80,11 @@ namespace Lab_4___Pedro_Naretto_19689484_5
         {
         }
 
+        public override string TipoVehiculo()
+        {
+            return "Auto";
+        }
+
     }
     class Camion : Vehiculos
     {
@@ -84,6 +93,11 @@ namespace Lab_4___Pedro_Naretto_19689484_5
         public Camion(string marca, string modelo, int año, int precio, string patente, int stock, List<Accesorios> Accesorios) : base(marca, modelo, año, precio, patente, stock, Accesorios)
         {
         }
+
+        public override string TipoVehiculo()
+        {
+            return "Camion";
+        }
     }
     class Buses : Vehiculos
     {
@@ -91,6 +105,46 @@ namespace Lab_4___Pedro_Naretto_19689484_5
 
         public Buses(string marca, string modelo, int año, int precio, string patente, int stock, List<Accesorios> Accesorios) : base(marca, modelo, año, precio, patente, stock, Accesorios)
         {
+        }
+        public override string TipoVehiculo()
+        {
+            return "Bus";
+        }
+    }
+    class Motos : Vehiculos
+    {
+        string TipoLicencia = "Licencia para motos";
+
+        public Motos(string marca, string modelo, int año, int precio, string patente, int stock, List<Accesorios> Accesorios) : base(marca, modelo, año, precio, patente, stock, Accesorios)
+        {
+        }
+        public override string TipoVehiculo()
+        {
+            return "Moto";
+        }
+    }
+    class Acuaticos : Vehiculos
+    {
+        string TipoLicencia = "Licencia para acuaticos";
+
+        public Acuaticos(string marca, string modelo, int año, int precio, string patente, int stock, List<Accesorios> Accesorios) : base(marca, modelo, año, precio, patente, stock, Accesorios)
+        {
+        }
+        public override string TipoVehiculo()
+        {
+            return "Acuatico";
+        }
+    }
+    class MaquinariaPesada : Vehiculos
+    {
+        string TipoLicencia = "Licencia para maquinaria pesada";
+
+        public MaquinariaPesada(string marca, string modelo, int año, int precio, string patente, int stock, List<Accesorios> Accesorios) : base(marca, modelo, año, precio, patente, stock, Accesorios)
+        {
+        }
+        public override string TipoVehiculo()
+        {
+            return "Maquinaria Pesada";
         }
     }
 }

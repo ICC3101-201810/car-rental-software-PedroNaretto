@@ -89,5 +89,71 @@ namespace Lab_4___Pedro_Naretto_19689484_5
 
             return ListaVehiculos;
         }
+        public List<Vehiculos> AgregarMoto(List<Vehiculos> ListaVehiculos)
+        {
+            int Precio;
+            int Stock;
+            int Año;
+            Console.WriteLine("Ingrese los datos del la moto que decea ingresar: ");
+            Console.WriteLine("Marca: ");
+            string Marca = Console.ReadLine();
+            Console.WriteLine("Modelo: ");
+            string Modelo = Console.ReadLine();
+            Console.WriteLine("Año: ");
+            int.TryParse(Console.ReadLine(), out Año);
+            Console.WriteLine("Precio: ");
+            int.TryParse(Console.ReadLine(), out Precio);
+            Console.WriteLine("Patente: ");
+            string Patente = Console.ReadLine();
+            Console.WriteLine("Stock: ");
+            int.TryParse(Console.ReadLine(), out Stock);
+            ListaVehiculos.Add(new Motos(Marca, Modelo, Año, Precio, Patente, Stock, new List<Accesorios> { }));
+
+            return ListaVehiculos;
+        }
+        public List<Vehiculos> AgregarAcuatico(List<Vehiculos> ListaVehiculos)
+        {
+            int Precio;
+            int Stock;
+            int Año;
+            Console.WriteLine("Ingrese los datos del vehiculo acuatico que decea ingresar: ");
+            Console.WriteLine("Marca: ");
+            string Marca = Console.ReadLine();
+            Console.WriteLine("Modelo: ");
+            string Modelo = Console.ReadLine();
+            Console.WriteLine("Año: ");
+            int.TryParse(Console.ReadLine(), out Año);
+            Console.WriteLine("Precio: ");
+            int.TryParse(Console.ReadLine(), out Precio);
+            Console.WriteLine("Patente: ");
+            string Patente = Console.ReadLine();
+            Console.WriteLine("Stock: ");
+            int.TryParse(Console.ReadLine(), out Stock);
+            ListaVehiculos.Add(new Acuaticos(Marca, Modelo, Año, Precio, Patente, Stock, new List<Accesorios> { }));
+
+            return ListaVehiculos;
+        }
+        public List<Vehiculos> AgregarMaquinariaPesada(List<Vehiculos> ListaVehiculos)
+        {
+            int Precio;
+            int Stock;
+            int Año;
+            Console.WriteLine("Ingrese los datos de la maquinaria pesada que decea ingresar: ");
+            Console.WriteLine("Marca: ");
+            string Marca = Console.ReadLine();
+            Console.WriteLine("Modelo: ");
+            string Modelo = Console.ReadLine();
+            Console.WriteLine("Año: ");
+            int.TryParse(Console.ReadLine(), out Año);
+            Console.WriteLine("Precio: ");
+            int.TryParse(Console.ReadLine(), out Precio);
+            Console.WriteLine("Patente: ");
+            string Patente = Console.ReadLine();
+            Console.WriteLine("Stock: ");
+            int.TryParse(Console.ReadLine(), out Stock);
+            ListaVehiculos.Add(new MaquinariaPesada(Marca, Modelo, Año, Precio, Patente, Stock, new List<Accesorios> { }));
+
+            return ListaVehiculos;
+        }
     }
 }
