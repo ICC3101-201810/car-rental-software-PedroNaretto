@@ -8,95 +8,84 @@ namespace Lab_4___Pedro_Naretto_19689484_5
 {
     class Municipalidad
     {
-        ICliente cliente;
-        string licencia;
 
-        public Municipalidad(ICliente cliente, string licencia)
-        {
-            this.cliente = cliente;
-            this.licencia = licencia;
-        }
-
-        string DarLicencia(ICliente cliente, string licencia)
+        public void DarLicencia(Cliente cliente, string licencia)
         {
             Random rnd = new Random();
-            if (licencia == "maquinaria pesada")
+            if (licencia == "Licencia para camiones")
             {
-                if ( cliente.TipoCliente == "Empresa")
+                if ( cliente is Empresa)
                 {
                     int x = rnd.Next(0, 100);
                     if (x <= 63)
                     {
-                        return "maquinaria pesada";
+                        Console.WriteLine("Se le ha otorgado la licencia para camiones");
+                        cliente.TipoLicencia.Add("Licencia para camiones");
                     }
                     else
                     {
-                        Console.Write("No se dio el permiso de maquinaria pesada");
-                        return "";
+                        Console.WriteLine("No se dio el permiso para camiones");
                     }
                 }
                 else
                 {
-                    Console.Write("No se dio el permiso de maquinaria pesada");
-                    return "";
+                    Console.WriteLine("No se dio el permiso para camiones");
                 }
             }
-            else
+            else if (licencia == "Licencia para buses")
             {
-                Console.Write("No se dio el permiso de maquinaria pesada");
-                return "";
-            }
-            if (licencia == "buses")
-            {
-                if (cliente.TipoCliente == "Empresa")
+                if (cliente is Empresa)
                 {
                     int x = rnd.Next(0, 100);
                     if (x <= 80)
                     {
-                        return "buses";
+                        Console.WriteLine("Se le ha otorgado la licencia para buses");
+                        cliente.TipoLicencia.Add("Licencia para buses");
                     }
                     else
                     {
-                        Console.Write("No se dio el permiso para buses");
-                        return "";
+                        Console.WriteLine("No se dio el permiso para buses");
                     }
                 }
-                if (cliente.TipoCliente == "Organizacion")
+                else if (cliente is Organizacion)
                 {
                     int x = rnd.Next(0, 100);
                     if (x <= 35)
                     {
-                        return "buses";
+                        Console.WriteLine("Se le ha otorgado la licencia para buses");
+                        cliente.TipoLicencia.Add("Licencia para buses");
                     }
                     else
                     {
-                        Console.Write("No se dio el permiso para buses");
-                        return "";
+                        Console.WriteLine("No se dio el permiso para buses");
                     }
                 }
-                if (cliente.TipoCliente == "Institucion")
+                else if (cliente is Institucion)
                 {
                     int x = rnd.Next(0, 100);
                     if (x <= 58)
                     {
-                        return "buses";
+                        Console.WriteLine("Se le ha otorgado la licencia para buses");
+                        cliente.TipoLicencia.Add("Licencia para buses");
                     }
                     else
                     {
-                        Console.Write("No se dio el permiso para buses");
-                        return "";
+                        Console.WriteLine("No se dio el permiso para buses");
                     }
                 }
                 else
                 {
-                    Console.Write("No se dio el permiso para buses");
-                    return "";
+                    Console.WriteLine("No se dio el permiso para buses");
                 }
+            }
+            else if (licencia == "Licencia para autos")
+            {
+                Console.WriteLine("Se le ha otorgado la licencia para autos");
+                cliente.TipoLicencia.Add("Licencia para autos");
             }
             else
             {
-                Console.Write("No se dio el permiso para buses");
-                return "";
+                Console.WriteLine("No se dio el permiso");
             }
         }
     }
